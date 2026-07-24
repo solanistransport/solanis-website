@@ -1,150 +1,241 @@
-<form
-  class="quote-form reveal"
-  action="https://formsubmit.co/quotes@solanistransport.com"
-  method="POST"
->
-  <!-- FormSubmit Settings -->
-  <input
-    type="hidden"
-    name="_subject"
-    value="New Freight Quote Request | Solanis Transport"
-  >
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Solanis Transport provides reliable hotshot and expedited freight solutions across Texas and beyond.">
+  <title>Solanis Transport | Reliable Hotshot Freight</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header" id="siteHeader">
+    <a class="brand" href="#home" aria-label="Solanis Transport home">
+      <img src="assets/logo.png" alt="Solanis Transport">
+    </a>
 
-  <input
-    type="hidden"
-    name="_template"
-    value="table"
-  >
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
 
-  <input
-    type="hidden"
-    name="_next"
-    value="https://solanistransport.com/?submitted=true#contact"
-  >
+    <nav class="main-nav" id="mainNav" aria-label="Primary navigation">
+      <a class="active" href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#industries">Industries</a>
+      <a href="#safety">Safety</a>
+      <a href="#equipment">Equipment</a>
+      <a href="#contact">Contact</a>
+    </nav>
 
-  <input
-    type="hidden"
-    name="_captcha"
-    value="false"
-  >
+    <a class="phone-button" href="tel:+13465532293" aria-label="Call Solanis Transport">
+      <span aria-hidden="true">☎</span> (346) 553-2293
+    </a>
+  </header>
 
-  <!-- Spam Protection -->
-  <input
-    type="text"
-    name="_honey"
-    tabindex="-1"
-    autocomplete="off"
-    style="display:none"
-  >
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="hero-shade" aria-hidden="true"></div>
+      <div class="hero-content reveal">
+        <p class="eyebrow">Reliable. Safe. On Time.</p>
+        <h1>Today’s Freight.<br><span>Tomorrow’s Legacy.</span></h1>
+        <p class="hero-copy">Hotshot and expedited freight solutions built on integrity, communication, and dependable service.</p>
+        <div class="hero-actions">
+          <a class="btn btn-gold" href="#contact"><span aria-hidden="true">▣</span> Request a Quote</a>
+          <a class="btn btn-outline" href="#services">Our Services <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+      <a class="scroll-cue" href="#trust" aria-label="Scroll to explore">
+        <span class="scroll-circle">⌄</span> Scroll to explore
+      </a>
+    </section>
 
-  <label>
-    Full Name
-    <input
-      required
-      type="text"
-      name="Full Name"
-      autocomplete="name"
-    >
-  </label>
+    <section class="trust-bar" id="trust" aria-label="Why choose Solanis">
+      <article>
+        <span class="icon-circle">♢</span>
+        <div><h3>Safety First</h3><p>We prioritize safety in every mile we drive.</p></div>
+      </article>
+      <article>
+        <span class="icon-circle">◷</span>
+        <div><h3>On Time Delivery</h3><p>Your freight. Our promise. Always on time.</p></div>
+      </article>
+      <article>
+        <span class="icon-circle">▤</span>
+        <div><h3>Real-Time Updates</h3><p>Clear communication every step of the way.</p></div>
+      </article>
+      <article>
+        <span class="icon-circle">♧</span>
+        <div><h3>Reliable Service</h3><p>Built on trust. Backed by experience.</p></div>
+      </article>
+    </section>
 
-  <label>
-    Company
-    <input
-      type="text"
-      name="Company"
-      autocomplete="organization"
-    >
-  </label>
+    <section class="section services" id="services">
+      <div class="section-heading reveal">
+        <p class="eyebrow centered">Our Services</p>
+        <h2>Flexible Solutions. Delivered.</h2>
+      </div>
 
-  <label>
-    Phone
-    <input
-      required
-      type="tel"
-      name="Phone"
-      autocomplete="tel"
-    >
-  </label>
+      <div class="service-grid">
+        <article class="service-card reveal">
+          <img src="assets/service-hotshot.jpg" alt="Hotshot truck hauling freight at sunset">
+          <div class="service-body"><span class="mini-icon">▰</span><div><h3>Hotshot Freight</h3><p>Fast, direct delivery for time-sensitive shipments.</p></div></div>
+        </article>
+        <article class="service-card reveal">
+          <img src="assets/service-expedited.jpg" alt="Expedited equipment shipment">
+          <div class="service-body"><span class="mini-icon">◇</span><div><h3>Expedited Shipping</h3><p>When time matters most, we deliver.</p></div></div>
+        </article>
+        <article class="service-card reveal">
+          <img src="assets/service-dedicated.jpg" alt="Dedicated transport carrying industrial equipment">
+          <div class="service-body"><span class="mini-icon">♞</span><div><h3>Dedicated Transport</h3><p>Dedicated solutions tailored to your specific needs.</p></div></div>
+        </article>
+        <article class="service-card reveal">
+          <img src="assets/service-industrial.jpg" alt="Industrial warehouse freight operation">
+          <div class="service-body"><span class="mini-icon">▥</span><div><h3>Industrial &amp; Commercial</h3><p>Safe, efficient freight solutions for growing businesses.</p></div></div>
+        </article>
+      </div>
+    </section>
 
-  <label>
-    Email
-    <input
-      required
-      type="email"
-      name="email"
-      autocomplete="email"
-    >
-  </label>
+    <section class="value-strip" id="about">
+      <article><span>⌖</span><div><h3>Based in Texas</h3><p>Proudly serving the Lone Star State and beyond.</p></div></article>
+      <article id="safety"><span>♢</span><div><h3>Safety Commitment</h3><p>Every load, every mile, safety always comes first.</p></div></article>
+      <article><span>♙</span><div><h3>Customer Focused</h3><p>We build lasting relationships through dependable service.</p></div></article>
+      <article><span>☏</span><div><h3>24/7 Support</h3><p>We’re here when you need us, day or night.</p></div></article>
+    </section>
 
-  <label>
-    Pickup Location
-    <input
-      required
-      type="text"
-      name="Pickup Location"
-    >
-  </label>
+    <section class="section split-section" id="industries">
+      <div class="split-copy reveal">
+        <p class="eyebrow">Industries We Serve</p>
+        <h2>Built for demanding freight.</h2>
+        <p>From construction materials and machinery to commercial goods and time-sensitive parts, Solanis Transport provides direct, dependable service that keeps your operation moving.</p>
+        <ul class="check-list">
+          <li>Construction and industrial equipment</li>
+          <li>Manufacturing and commercial freight</li>
+          <li>Automotive and machinery parts</li>
+          <li>Urgent and same-day deliveries</li>
+        </ul>
+      </div>
+      <div class="equipment-panel reveal" id="equipment">
+        <p class="eyebrow">Equipment</p>
+        <h2>Ready for the road.</h2>
+        <p>Our hotshot setup is designed for flexible loading, secure transport, and dependable regional service.</p>
+        <div class="spec-grid">
+          <div><strong>Gooseneck</strong><span>Flatbed capability</span></div>
+          <div><strong>Securement</strong><span>Professional load protection</span></div>
+          <div><strong>Tracking</strong><span>Clear shipment updates</span></div>
+          <div><strong>Texas-Based</strong><span>Regional availability</span></div>
+        </div>
+      </div>
+    </section>
 
-  <label>
-    Delivery Location
-    <input
-      required
-      type="text"
-      name="Delivery Location"
-    >
-  </label>
+    <section class="quote-section" id="contact">
+      <div class="quote-intro reveal">
+        <p class="eyebrow">Request a Quote</p>
+        <h2>Let’s move your freight.</h2>
+        <p>Tell us what you need moved and where it needs to go. We’ll follow up with availability and pricing.</p>
+        <a href="tel:+13465532293" class="contact-line">☎ (346) 553-2293</a>
+      </div>
 
-  <label>
-    Pickup Date
-    <input
-      type="date"
-      name="Pickup Date"
-    >
-  </label>
+      <form
+        class="quote-form reveal"
+        action="https://formsubmit.co/quotes@solanistransport.com"
+        method="POST"
+      >
+        <input type="hidden" name="_subject" value="New Freight Quote Request | Solanis Transport">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" value="https://solanistransport.com/?submitted=true#contact">
+        <input type="hidden" name="_captcha" value="false">
 
-  <label>
-    Delivery Date
-    <input
-      type="date"
-      name="Delivery Date"
-    >
-  </label>
+        <input
+          type="text"
+          name="_honey"
+          tabindex="-1"
+          autocomplete="off"
+          style="display:none"
+        >
 
-  <label>
-    Estimated Weight
-    <input
-      type="text"
-      name="Estimated Weight"
-      placeholder="Example: 5,000 lb"
-    >
-  </label>
+        <label>
+          Full Name
+          <input required type="text" name="Full Name" autocomplete="name">
+        </label>
 
-  <label>
-    Freight Type
-    <select name="Freight Type">
-      <option>Hotshot Freight</option>
-      <option>Expedited Freight</option>
-      <option>Dedicated Transport</option>
-      <option>Industrial Equipment</option>
-      <option>Construction Materials</option>
-      <option>Other</option>
-    </select>
-  </label>
+        <label>
+          Company
+          <input type="text" name="Company" autocomplete="organization">
+        </label>
 
-  <label class="full">
-    Freight Details
-    <textarea
-      required
-      name="Freight Details"
-      rows="5"
-      placeholder="Commodity, dimensions, weight, pickup and delivery dates, special instructions, etc."
-    ></textarea>
-  </label>
+        <label>
+          Phone
+          <input required type="tel" name="Phone" autocomplete="tel">
+        </label>
 
-  <button
-    class="btn btn-gold full"
-    type="submit"
-  >
-    Submit Quote Request
-  </button>
-</form>
+        <label>
+          Email
+          <input required type="email" name="email" autocomplete="email">
+        </label>
+
+        <label>
+          Pickup Location
+          <input required type="text" name="Pickup Location">
+        </label>
+
+        <label>
+          Delivery Location
+          <input required type="text" name="Delivery Location">
+        </label>
+
+        <label>
+          Pickup Date
+          <input type="date" name="Pickup Date">
+        </label>
+
+        <label>
+          Delivery Date
+          <input type="date" name="Delivery Date">
+        </label>
+
+        <label>
+          Estimated Weight
+          <input type="text" name="Estimated Weight" placeholder="Example: 5,000 lb">
+        </label>
+
+        <label>
+          Freight Type
+          <select name="Freight Type">
+            <option value="Hotshot Freight">Hotshot Freight</option>
+            <option value="Expedited Freight">Expedited Freight</option>
+            <option value="Dedicated Transport">Dedicated Transport</option>
+            <option value="Industrial Equipment">Industrial Equipment</option>
+            <option value="Construction Materials">Construction Materials</option>
+            <option value="Other">Other</option>
+          </select>
+        </label>
+
+        <label class="full">
+          Freight Details
+          <textarea
+            required
+            name="Freight Details"
+            rows="5"
+            placeholder="Commodity, dimensions, weight, pickup and delivery dates, special instructions, etc."
+          ></textarea>
+        </label>
+
+        <button class="btn btn-gold full" type="submit">
+          Submit Quote Request
+        </button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <img src="assets/logo.png" alt="Solanis Transport">
+    <p>Reliable hotshot and expedited freight service based in Texas.</p>
+    <p>© <span id="year"></span> Solanis Transport. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
