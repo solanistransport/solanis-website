@@ -8,6 +8,7 @@ year.textContent = new Date().getFullYear();
 function updateHeader() {
   header.classList.toggle('scrolled', window.scrollY > 30);
 }
+
 updateHeader();
 window.addEventListener('scroll', updateHeader, { passive: true });
 
@@ -37,9 +38,13 @@ const sectionObserver = new IntersectionObserver(entries => {
       });
     }
   });
-}, { rootMargin: '-35% 0px -55% 0px' });
+}, {
+  rootMargin: '-35% 0px -55% 0px'
+});
 
-sections.forEach(section => sectionObserver.observe(section));
+sections.forEach(section => {
+  sectionObserver.observe(section);
+});
 
 const revealObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
@@ -48,33 +53,57 @@ const revealObserver = new IntersectionObserver(entries => {
       revealObserver.unobserve(entry.target);
     }
   });
-}, { threshold: 0.12 });
+}, {
+  threshold: 0.12
+});
 
-document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+document.querySelectorAll('.reveal').forEach(element => {
+  revealObserver.observe(element);
+});
 
 /* ===========================
-   Quote Form Success Message
+   Quote Confirmation Popup
    =========================== */
 
 const params = new URLSearchParams(window.location.search);
+const quoteModal = document.getElementById('quoteModal');
+
+function openQuoteModal() {
+  if (!quoteModal) {
+    return;
+  }
+
+  quoteModal.classList.add('open');
+  quoteModal.setAttribute('aria-hidden', 'false');
+  document.body.classList.add('modal-open');
+}
+
+function closeQuoteModal() {
+  if (!quoteModal) {
+    return;
+  }
+
+  quoteModal.classList.remove('open');
+  quoteModal.setAttribute('aria-hidden', 'true');
+  document.body.classList.remove('modal-open');
+}
 
 if (params.get('submitted') === 'true') {
-  const success = document.getElementById('quote-success');
+  openQuoteModal();
 
-  if (success) {
-    success.style.display = 'block';
-
-    // Scroll to the success message
-    success.scrollIntoView({
-      behavior: 'smooth',
-      block: 'center'
-    });
-
-    // Remove ?submitted=true from the URL
-    window.history.replaceState(
-      {},
-      document.title,
-      window.location.pathname + '#contact'
-    );
-  }
+  window.history.replaceState(
+    {},
+    document.title,
+    window.location.pathname + '#contact'
+  );
 }
+
+document.querySelectorAll('[data-close-modal]').forEach(button => {
+  button.addEventListener('click', closeQuoteModal);
+});
+
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape') {
+    closeQuoteModal();
+  }
+});
