@@ -138,12 +138,6 @@
     <a href="tel:+13465532293" class="contact-line">☎ (346) 553-2293</a>
   </div>
 
-  <div id="quote-success" class="quote-success" style="display:none;">
-    <strong>✅ Thank you!</strong><br>
-    Your quote request has been submitted successfully.
-    A member of the Solanis Transport team will contact you shortly.
-  </div>
-
   <form
     class="quote-form reveal"
     action="https://formsubmit.co/anthony@solanistransport.com"
@@ -241,6 +235,35 @@
     <p>Reliable hotshot and expedited freight service based in Texas.</p>
     <p>© <span id="year"></span> Solanis Transport. All rights reserved.</p>
   </footer>
+
+
+  <div class="quote-modal" id="quoteModal" aria-hidden="true">
+    <div class="quote-modal-overlay" data-close-modal></div>
+
+    <div class="quote-modal-box" role="dialog" aria-modal="true" aria-labelledby="quoteModalTitle">
+      <button
+        class="quote-modal-close"
+        type="button"
+        aria-label="Close confirmation message"
+        data-close-modal
+      >
+        ×
+      </button>
+
+      <div class="quote-modal-icon">✓</div>
+
+      <h2 id="quoteModalTitle">Thank You!</h2>
+
+      <p>
+        Your quote request has been submitted successfully.
+        A member of the Solanis Transport team will contact you shortly.
+      </p>
+
+      <button class="btn btn-gold" type="button" data-close-modal>
+        Close
+      </button>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
