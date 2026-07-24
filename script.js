@@ -29,7 +29,12 @@ const navLinks = [...mainNav.querySelectorAll('a')];
 const sectionObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      navLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === `#${entry.target.id}`));
+      navLinks.forEach(link => {
+        link.classList.toggle(
+          'active',
+          link.getAttribute('href') === `#${entry.target.id}`
+        );
+      });
     }
   });
 }, { rootMargin: '-35% 0px -55% 0px' });
@@ -46,3 +51,30 @@ const revealObserver = new IntersectionObserver(entries => {
 }, { threshold: 0.12 });
 
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+/* ===========================
+   Quote Form Success Message
+   =========================== */
+
+const params = new URLSearchParams(window.location.search);
+
+if (params.get('submitted') === 'true') {
+  const success = document.getElementById('quote-success');
+
+  if (success) {
+    success.style.display = 'block';
+
+    // Scroll to the success message
+    success.scrollIntoView({
+      behavior: 'smooth',
+      block: 'center'
+    });
+
+    // Remove ?submitted=true from the URL
+    window.history.replaceState(
+      {},
+      document.title,
+      window.location.pathname + '#contact'
+    );
+  }
+}
