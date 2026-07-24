@@ -156,39 +156,86 @@ footer p{margin:7px 0;font-size:13px}
   .quote-section h2{font-size:44px}
   .quote-form>*{grid-column:1}
 }
+
+
 /* ===========================
-   Quote Form Success Message
+   Quote Confirmation Popup
    =========================== */
 
-.quote-success {
-    display: none;
-    background: #edf9f1;
-    border: 2px solid #1f7a3d;
-    color: #155724;
-    padding: 18px 22px;
-    margin: 0 0 25px;
-    border-radius: 10px;
-    font-size: 16px;
-    line-height: 1.6;
-    font-weight: 500;
-    box-shadow: 0 8px 20px rgba(0,0,0,.08);
-    animation: fadeIn .4s ease;
+.quote-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
 }
 
-.quote-success strong {
-    display: block;
-    font-size: 20px;
-    color: #0f5b2c;
-    margin-bottom: 6px;
+.quote-modal.open { display:flex; }
+
+.quote-modal-overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(5,20,38,.78);
+  backdrop-filter:blur(3px);
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-12px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.quote-modal-box{
+  position:relative;
+  z-index:1;
+  width:min(460px,100%);
+  background:#fff;
+  border-radius:14px;
+  padding:42px 32px 32px;
+  text-align:center;
+  box-shadow:0 24px 70px rgba(0,0,0,.3);
+  animation:quoteModalIn .35s ease;
+}
+
+.quote-modal-icon{
+  width:72px;
+  height:72px;
+  margin:0 auto 20px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:var(--gold);
+  color:#fff;
+  font-size:38px;
+  font-weight:700;
+}
+
+.quote-modal-box h2{
+  margin:0 0 12px;
+  color:var(--ink);
+  font-size:34px;
+}
+
+.quote-modal-box p{
+  margin:0 0 26px;
+  color:#4a5565;
+  font-size:16px;
+  line-height:1.65;
+}
+
+.quote-modal-close{
+  position:absolute;
+  top:12px;
+  right:16px;
+  border:0;
+  background:transparent;
+  font-size:30px;
+  color:#6b7280;
+  cursor:pointer;
+}
+
+.quote-modal-close:hover{color:var(--ink);}
+
+body.modal-open{overflow:hidden;}
+
+@keyframes quoteModalIn{
+  from{opacity:0;transform:translateY(20px) scale(.96);}
+  to{opacity:1;transform:translateY(0) scale(1);}
 }
